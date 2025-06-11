@@ -1,0 +1,9 @@
+my-app-8dh36a.eastus.azurecontainer.io {
+
+    handle_path /grafana/* {
+        rewrite /grafana/* /{path}/
+	reverse_proxy * http://localhost:3000
+    }
+    
+    reverse_proxy http://localhost:5000
+}
